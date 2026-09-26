@@ -15,9 +15,7 @@ const SelectBars = () => {
         planLists,
         setPlanLists,
         todaysMode , 
-        setTodaysMode,
         savedMode , 
-        setSavedMode
     } = context
     
 
