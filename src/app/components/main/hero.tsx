@@ -20,7 +20,9 @@ const HeroSection = () => {
        FitLog is dark, no-nonsense gym companion: pick a lift, lock it<br/>
        into today&apos;s plan, and wathc the week&apos;s work add up.
       </p>
-      <button className="btn btn-primary bg-[#ccff00] text-black" ><a href="#library">BROSE WORKOUT</a></button>
+      <a href="#library">
+      <button className="btn btn-primary bg-[#ccff00] text-black" >BROSE WORKOUT</button>
+      </a>
     </div>
   </div>
 </div>

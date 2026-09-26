@@ -61,7 +61,7 @@ const SelectedCardToday = ({item}: {item:Library}) => {
         </div>
         <div className="pt-2 flex flex-col items-start">
            <h1 className="pl-4 text-lg font-bold sm:text-3xl font-sans">{item.name}</h1>
-           <p className="pl-4 text-lg text-zinc-400">{item.description}</p>
+           <p className="pl-4 text-lg text-zinc-400">{item.equipment}</p>
            <div >
             <div className="card-actions justify-start hidden sm:block">
                   <div className="badge badge-outline border-0 bg-none">

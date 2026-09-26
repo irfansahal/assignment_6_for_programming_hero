@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Assignment Five Project ( A Gymnasium App Project )
 
-## Getting Started
+***
 
-First, run the development server:
+## Short description
+Here you can observe a few available workout option, You can select one for your current and later workout, We believe It would be more useful for your physical and mantel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies used 
+I tried to develop this project combining JavaScript, TypeScript, React , Next.js , Tailwind , DaisyUi, approuter form nextjs 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 5 key features of the project
+You can get many features in this project, But the most considerable five features are : 
+1. You can find out your all queries about current workout by clicking on a card/library. 
+2. If you clikc in the details page "add to today's plan" button , It would be saved in today's plan list, even you can see the current library in the today's plan lists in the page "myplan" when you click today's tab.
+3. As the same way If you clikc in the details page "add to saved plan" button , It would be saved in saved plan list, even you can see the current library in the saved plan lists in the page "myplan" when you click saved tab. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. You can observe on the top right badge current quentity of libraries you added to today's plan and saved plan, I mean how many libraries you added to today's plan or saved plan, this badge telles you 
+5. There is a state section where you can observe how many libraries you added to "today's plan" or "saved plan" , and you can know how many calories burn when you are finishing all categories of libraries, how long times are needed to finsh all kind of workouts  
