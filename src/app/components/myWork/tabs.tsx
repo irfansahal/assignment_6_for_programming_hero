@@ -32,14 +32,14 @@ const TabsButtons = () => {
        setTodaysMode(!todaysMode)
    }
         console.log("today", todaysMode, "saved", savedMode);       
-
+     
     return(
     <>
     <div className="">
                 {/* name of each tab group should be unique */}
          <div className="tabs tabs-box w-[200px]">
-          <input type="radio" name="my_tabs_1" className="tab" aria-label="Today's plan" onClick={todaysChangeHandler} defaultChecked/>
-         <input type="radio" name="my_tabs_1" className="tab" aria-label="Saved" onClick={savedChangeHandler} />
+          <input type="radio" name="my_tabs_1" className={todaysMode === true ? "tab font-bold text-[#ccff00]" : "tab"} aria-label="Today's plan" onClick={todaysChangeHandler} defaultChecked/>
+         <input type="radio" name="my_tabs_1" className={savedMode === true ? "tab font-bold text-[#ccff00]" : "tab"} aria-label="Saved" onClick={savedChangeHandler} />
          </div>
     </div>
     </>

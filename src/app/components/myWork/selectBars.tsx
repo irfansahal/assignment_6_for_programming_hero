@@ -36,13 +36,15 @@ const SelectBars = () => {
     }
 
     const changeHandlerSaved = (value :string) => {
-             if(value === "Duration"){
-               setPlanLists([...workoutLists].sort((a , b )=> b.duration - a.duration))
+          if(savedMode){
+               if(value === "Duration"){
+               setPlanLists([...planLists].sort((a , b )=> b.duration - a.duration))
            }else if(value === "Calories"){
-               setPlanLists([...workoutLists].sort((a , b)=> b.caloriesBurned - a.caloriesBurned))
+               setPlanLists([...planLists].sort((a , b)=> b.caloriesBurned - a.caloriesBurned))
            }else{
-               setPlanLists([...workoutLists].sort((a , b)=> b.rating - a.rating))
+               setPlanLists([...planLists].sort((a , b)=> b.rating - a.rating))
            }
+          }
     }
 
     return(
