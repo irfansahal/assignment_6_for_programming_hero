@@ -10,7 +10,7 @@ const Card = ({ item }: {item : Library} ) => {
     return(
         <>
         <div>
-            <div className="card bg-[#1a2131]  shadow-sm h-[400px]">
+            <div className="card bg-[#1a2131] hover:border-1 hover:border-[#ccff00] shadow-sm h-[400px]">
   <figure >
     <Image
       src={item.image}

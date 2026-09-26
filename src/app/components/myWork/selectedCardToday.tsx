@@ -34,21 +34,31 @@ const SelectedCardToday = ({item}: {item:Library}) => {
           }
        });
        setWorkoutLists(fitaredData)
+       toast.success(`You Deleted ${item.name} Successfully`)
    }
 
-   const markDoneHandler = () => {
-       setDoneList([...doneLists, item])
-       toast(`You maked ${item.name}`)
-   }
+  //  const markDoneHandler = () => {
+  //      setDoneList([...doneLists, item])
+  //      toast(`You maked ${item.name}`)
+  //  }
 
-   console.log("Done List",doneLists);
+  //  console.log("Done List",doneLists);
    
-   const isMorkdone = doneLists.find((current:Library)=>{
-      if(item.id === current.id){
-        return current
-      }
-   })
+  //  const isMorkdone = doneLists.find((current:Library)=>{
+  //     if(item.id === current.id){
+  //       return current
+  //     }
+  //  })
 
+  const markDoneHandler = () => {
+        const fitaredData = workoutLists.filter((current : Library)=>{
+          if(current.id !== item.id){
+             return item
+          }
+       });
+       setWorkoutLists(fitaredData)
+       toast.success(`You Deleted ${item.name} Successfully`)
+  }
 
     return(
         <>
@@ -89,7 +99,7 @@ const SelectedCardToday = ({item}: {item:Library}) => {
             </Link>
        </div>
        <div className="">
-       {!isMorkdone && <button className="btn btn-neutral rounded-4xl bg-[#ccff00] text-black w-[170px]" onClick={markDoneHandler}><span className="font-bold text-xl"><HiOutlineCheck /></span>Mark As Done</button>}
+       <button className="btn btn-neutral rounded-4xl bg-[#ccff00] text-black w-[170px]" onClick={markDoneHandler}><span className="font-bold text-xl"><HiOutlineCheck /></span>Mark As Done</button>
        </div>
        <div>
             <button className="text-3xl"
