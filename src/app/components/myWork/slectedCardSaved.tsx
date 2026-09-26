@@ -9,6 +9,7 @@ import { FaLeaf } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { HiOutlineCheck } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const SelectedCardSaved = ({ item }:{ item : Library}) => {
   const context = useContext(WorkoutContext)
@@ -28,6 +29,7 @@ const removeHandler = () => {
           }
        });
        setPlanLists(fitaredData)
+       toast.success(`You Deleted ${item.name} Successfully`)
    }
 
     return(
