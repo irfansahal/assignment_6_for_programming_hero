@@ -22,11 +22,7 @@ const LinkButtons = () => {
      const currentPathName = usePathname();
      console.log(currentPathName);
      
-    //  const context = useContext(WorkoutContext);
-    //  if(!context){
-    //    throw new Error("")
-    //  }
-    // const {} = context
+    
     const clickStyle = "rounded-4xl sm:bg-[#212147] sm:py-2 sm:px-6 text-[#ccff00] font-bold "
 
   return (

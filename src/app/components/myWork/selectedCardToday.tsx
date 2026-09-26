@@ -42,7 +42,7 @@ const SelectedCardToday = ({item}: {item:Library}) => {
           }
        });
        setWorkoutLists(fitaredData)
-       toast.success(`You Deleted ${item.name} Successfully`)
+       toast.success(`You Copleted ${item.name} Successfully`)
   }
 
     return(

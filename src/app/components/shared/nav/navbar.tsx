@@ -1,8 +1,6 @@
 "use client"
 import Image from "next/image"
 import LinkButtons from "./linkButton"
-import { useContext } from "react"
-import { WorkoutContext } from "@/app/context/workoutContext"
 import BadgeButton from "./badgeButton"
 
 const Navbar = () => {
@@ -26,15 +24,7 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 ">
       <LinkButtons/>
-      {/* <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2 bg-base-100 w-40 z-1">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li> */}
+     
      
     </ul>
   </div>
