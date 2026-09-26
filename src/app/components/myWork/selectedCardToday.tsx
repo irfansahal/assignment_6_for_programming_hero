@@ -3,7 +3,6 @@ import { WorkoutContext } from "@/app/context/workoutContext";
 import { Library } from "@/app/types/libraryItems";
 import Image from "next/image"
 import Link from "next/link";
-import { log } from "node:console";
 import { useContext } from "react";
 import { CiStopwatch } from "react-icons/ci";
 import { FaLeaf } from "react-icons/fa";
@@ -35,18 +34,6 @@ const SelectedCardToday = ({item}: {item:Library}) => {
        toast.success(`You Deleted ${item.name} Successfully`)
    }
 
-  //  const markDoneHandler = () => {
-  //      setDoneList([...doneLists, item])
-  //      toast(`You maked ${item.name}`)
-  //  }
-
-  //  console.log("Done List",doneLists);
-   
-  //  const isMorkdone = doneLists.find((current:Library)=>{
-  //     if(item.id === current.id){
-  //       return current
-  //     }
-  //  })
 
   const markDoneHandler = () => {
         const fitaredData = workoutLists.filter((current : Library)=>{
