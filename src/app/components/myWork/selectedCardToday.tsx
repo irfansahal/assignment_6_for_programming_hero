@@ -22,8 +22,6 @@ const SelectedCardToday = ({item}: {item:Library}) => {
     todaysMode,
      workoutLists,
     setWorkoutLists,
-     doneLists , 
-      setDoneList
   } = context
   
   console.log("from card",workoutLists);
