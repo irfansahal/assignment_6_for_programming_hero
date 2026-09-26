@@ -1,0 +1,108 @@
+"use client"
+import { WorkoutContext } from "@/app/context/workoutContext";
+import { Library } from "@/app/types/libraryItems";
+import Image from "next/image"
+import Link from "next/link";
+import { log } from "node:console";
+import { useContext } from "react";
+import { CiStopwatch } from "react-icons/ci";
+import { FaLeaf } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
+import { HiOutlineCheck } from "react-icons/hi";
+import { MdClose } from "react-icons/md";
+import { toast } from "react-toastify";
+
+const SelectedCardToday = ({item}: {item:Library}) => {
+  
+  const context = useContext(WorkoutContext)
+  if(!context){
+    throw new Error("useWorkout must be used inside WorkoutContextProvider")
+  }
+  const {
+    todaysMode,
+     workoutLists,
+    setWorkoutLists,
+     doneLists , 
+      setDoneList
+  } = context
+  
+  console.log("from card",workoutLists);
+   const removeHandler = () => {
+       const fitaredData = workoutLists.filter((current : Library)=>{
+          if(current.id !== item.id){
+             return item
+          }
+       });
+       setWorkoutLists(fitaredData)
+   }
+
+   const markDoneHandler = () => {
+       setDoneList([...doneLists, item])
+       toast(`You maked ${item.name}`)
+   }
+
+   console.log("Done List",doneLists);
+   
+   const isMorkdone = doneLists.find((current:Library)=>{
+      if(item.id === current.id){
+        return current
+      }
+   })
+
+
+    return(
+        <>
+          <div className={todaysMode ? "block": "hidden" }>
+                <div className="card bg-base-100  shadow-sm">
+  <div className="card-body flex flex-col md:flex-row justify-between">
+    <div className="flex">
+        <div className="">
+            <Image src={item?.image} alt="card" width={200} height={100} className="rounded-2xl"/>
+        </div>
+        <div className="pt-2 flex flex-col items-start">
+           <h1 className="pl-4 text-lg font-bold sm:text-3xl font-sans">{item.name}</h1>
+           <p className="pl-4 text-lg text-zinc-400">{item.description}</p>
+           <div >
+            <div className="card-actions justify-start hidden sm:block">
+                  <div className="badge badge-outline border-0 bg-none">
+                    <span className="text-[#ccff00] text-xl font-bold"><CiStopwatch /></span>{item.duration} min
+                  </div>
+                  <div className="badge badge-outline  border-0 bg-none"><span className="text-[#ccff00] text-xl font-bold"><FaLeaf /></span>{item.caloriesBurned} kcal</div>
+                  <div className="badge badge-outline  border-0 bg-none"><span className="text-[#ccff00] text-xl font-bold"><FaRegStar /></span>{item.rating}</div>
+                </div>
+           </div>
+        </div>
+    </div>
+    <div>
+       <div className="card-actions justify-start sm:hidden block">
+                  <div className="badge badge-outline border-0 bg-none">
+                    <span className="text-[#ccff00] text-xl font-bold"><CiStopwatch /></span>{item.duration} min
+                  </div>
+                  <div className="badge badge-outline  border-0 bg-none"><span className="text-[#ccff00] text-xl font-bold"><FaLeaf /></span>{item.caloriesBurned} kcal</div>
+                  <div className="badge badge-outline  border-0 bg-none"><span className="text-[#ccff00] text-xl font-bold"><FaRegStar /></span>{item.rating}</div>
+                </div>
+      </div>  
+     <div className="flex items-center gap-1 sm:gap-3 ">
+       <div>
+            <Link href={`/${item.id}`}>
+            <button className="btn btn-outline rounded-4xl w-[150px]">View Details</button>
+            </Link>
+       </div>
+       <div className="">
+       {!isMorkdone && <button className="btn btn-neutral rounded-4xl bg-[#ccff00] text-black w-[170px]" onClick={markDoneHandler}><span className="font-bold text-xl"><HiOutlineCheck /></span>Mark As Done</button>}
+       </div>
+       <div>
+            <button className="text-3xl"
+            onClick={removeHandler}
+            ><MdClose /></button>
+       </div>
+      </div>
+      </div>
+</div>
+              </div>
+
+        </>
+    )
+}
+
+export default SelectedCardToday

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Navbar from "./components/shared/nav/navbar"
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import WorkoutContextProvider from "./context/workoutContext";
+import Footer from "./components/shared/footer/footer";
+import { ToastContainer } from "react-toastify";
+config.autoAddCss = false
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,7 +29,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+         <WorkoutContextProvider>
+             <Navbar/>
+             {children}
+             <Footer/>
+              <ToastContainer />
+         </WorkoutContextProvider>
+        </body>
     </html>
   );
 }
